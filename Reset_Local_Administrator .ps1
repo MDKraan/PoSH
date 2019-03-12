@@ -2,7 +2,7 @@
 ###### Reset local Administrator Powershell #######
 #
 # Version - 1.0 - Author - Mic Kraan
-#﻿
+# 
 # DESCRIPTION:
 # Reset all local admin passwords
 #
@@ -13,7 +13,6 @@
 #############################
 
 $Computers = Get-Content -Path "path to txt file with servers" # type full path to txt file
-
 
 $password = Read-Host -Prompt "Enter password" -AsSecureString
 $confirmpassword = Read-Host "Confirm the Password" -AsSecureString
@@ -26,13 +25,10 @@ if($password1 -ne $password2){
     EXIT
 }
 
-
-
 foreach ($Computer in $Computers) {
 
     $Computer
     $User = [ADSI]"WinNT://$Computer/Administrator,User" # please be aware if you renamed your admin account to rename it here as well
     $User.SetPassword($decodedpassword)
     $User.SetInfo()
-
 }
