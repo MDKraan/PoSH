@@ -1,6 +1,19 @@
-﻿
+
+###### Reset local Admninistrator Powershell #######
+#
+# Version - 1.0 - Author - Mic Kraan
+#﻿
+# DESCRIPTION:
+# Reset all local admin passwords
+#
+# TO CHECK:
+# - Create a txt file with all your servers that need resetting
+# - Make sure the local admin name is not changed from Admninistrator
+#
+#############################
 
 $Computers = Get-Content -Path "path to txt file with servers" # type full path to txt file
+
 
 $password = Read-Host -Prompt "Enter password" -AsSecureString
 $confirmpassword = Read-Host "Confirm the Password" -AsSecureString
