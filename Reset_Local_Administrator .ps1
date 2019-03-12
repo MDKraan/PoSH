@@ -1,5 +1,5 @@
 
-###### Reset local Admninistrator Powershell #######
+###### Reset local Administrator Powershell #######
 #
 # Version - 1.0 - Author - Mic Kraan
 #﻿
@@ -8,7 +8,7 @@
 #
 # TO CHECK:
 # - Create a txt file with all your servers that need resetting
-# - Make sure the local admin name is not changed from Admninistrator
+# - Make sure the local admin name is not changed from Administrator
 #
 #############################
 
@@ -31,7 +31,7 @@ if($password1 -ne $password2){
 foreach ($Computer in $Computers) {
 
     $Computer
-    $User = [ADSI]"WinNT://$Computer/Admninistrator,User" # please be aware if you renamed your admin account to rename it here as well
+    $User = [ADSI]"WinNT://$Computer/Administrator,User" # please be aware if you renamed your admin account to rename it here as well
     $User.SetPassword($decodedpassword)
     $User.SetInfo()
 
