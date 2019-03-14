@@ -1,8 +1,8 @@
 
-###### Reset local Administrator Powershell #######
+###### Reset local Administrator Powershell ##########
 #
 # Version - 1.0 - Author - Mic Kraan
-# 
+#
 # DESCRIPTION:
 # Reset all local admin passwords
 #
